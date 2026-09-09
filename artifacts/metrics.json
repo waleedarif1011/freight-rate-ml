@@ -1,0 +1,38 @@
+{
+  "local_train_end": "2025-08-31",
+  "local_val_start": "2025-09-01",
+  "local_train_rows": 38477,
+  "local_val_rows": 9523,
+  "baseline": {
+    "mae": 229.09657316845033,
+    "rmse": 670.6599545300177,
+    "mape": 10.487418950668491
+  },
+  "lightgbm": {
+    "mae": 112.34145244265129,
+    "rmse": 631.9721358630223,
+    "mape": 4.971847900361679
+  },
+  "best_iteration_local": 58,
+  "final_num_boost_round": 58,
+  "feature_columns": [
+    "distance",
+    "log_distance",
+    "weight",
+    "equipment_code",
+    "month",
+    "dayofweek",
+    "weekofyear",
+    "month_sin",
+    "month_cos",
+    "pickup_lat",
+    "pickup_lon",
+    "delivery_lat",
+    "delivery_lon",
+    "haversine_miles",
+    "bearing",
+    "market_index",
+    "quote_signal",
+    "distance_x_market"
+  ]
+}

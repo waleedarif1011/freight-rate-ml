@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.wheels/
+.pytest_cache/
+.ipynb_checkpoints/
+*.joblib.bak
+.DS_Store
+Thumbs.db
+Machine Learning Engineer _ Assessment.eml
