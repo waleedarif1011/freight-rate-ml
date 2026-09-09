@@ -124,11 +124,3 @@ Key code:
 - `src/predict.py` / `src/december.py` — validation + December inference  
 
 ---
-
-## 9. Submission checklist
-
-- [x] Reproducible GitHub-ready repository with README  
-- [x] `validation_predictions.csv` (12,000 IDs)  
-- [x] `scorer_results/candidate_december.png`  
-- [x] This report (split rationale + December chart)  
-- [ ] 2–3 minute Loom (see README outline)
