@@ -1,0 +1,18 @@
+[
+  {"pickup": "Lexington", "delivery": "Atlanta", "distance": 209.1},
+  {"pickup": "Phoenix", "delivery": "Shreveport", "distance": 1669.0},
+  {"pickup": "Columbia", "delivery": "Oklahoma City", "distance": 1058.9},
+  {"pickup": "Fort Wayne", "delivery": "Philadelphia", "distance": 792.35},
+  {"pickup": "Fort Wayne", "delivery": "Hartford", "distance": 831.3},
+  {"pickup": "Lexington", "delivery": "Cincinnati", "distance": 132.2},
+  {"pickup": "Shreveport", "delivery": "Hartford", "distance": 1436.5},
+  {"pickup": "Richmond", "delivery": "Phoenix", "distance": 2710.6},
+  {"pickup": "Lexington", "delivery": "Kansas City", "distance": 448.6},
+  {"pickup": "Richmond", "delivery": "Oklahoma City", "distance": 1526.2},
+  {"pickup": "Fort Wayne", "delivery": "Cincinnati", "distance": 180.0},
+  {"pickup": "Mobile", "delivery": "Phoenix", "distance": 2100.0},
+  {"pickup": "Oklahoma City", "delivery": "Nashville", "distance": 680.0},
+  {"pickup": "Oklahoma City", "delivery": "Columbia", "distance": 1050.0},
+  {"pickup": "Oklahoma City", "delivery": "Atlanta", "distance": 900.0},
+  {"pickup": "Lexington", "delivery": "Fort Wayne", "distance": 360.0}
+]
