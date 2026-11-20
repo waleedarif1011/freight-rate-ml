@@ -18,7 +18,11 @@ license: mit
 
 Interactive **spot truckload rate** quoter backed by a LightGBM rate-per-mile (RPM) model.
 
-> **Live demo:** after the Hugging Face Space is created (see [Deploy](#deploy-hugging-face-space)), open the badge URL above. Until then, run locally with `python app.py`.
+> **Live demo:** Space URL above goes live after deploy (`./scripts/deploy_hf_space.sh` — needs `HF_TOKEN`). Until then, run locally with `python app.py`.
+
+![Quote UI — Lexington → Atlanta (short Dry Van)](assets/quote-ui.png)
+
+![Quote UI — Phoenix → Shreveport (long Dry Van)](assets/quote-preset-long-haul.png)
 
 ## Problem
 
@@ -35,7 +39,7 @@ Full metrics: [`artifacts/metrics.json`](artifacts/metrics.json).
 
 ### December forecast (fixed Lexington → Fort Wayne lane)
 
-![December predicted rates](scorer_results/candidate_december.png)
+![December predicted rates](assets/december-forecast.png)
 
 ## Quickstart
 
@@ -72,16 +76,14 @@ GitHub Actions runs the same suite on every push/PR (`.github/workflows/ci.yml`)
 
 ## Deploy (Hugging Face Space)
 
-This repo is Space-ready (`app.py` + Gradio README frontmatter). Create and push:
+This repo is Space-ready (`app.py` + Gradio README frontmatter). With a write token:
 
 ```bash
-# once: huggingface-cli login   # needs a write token with Spaces scope
-huggingface-cli repo create freight-rate-ml --type space --space_sdk gradio -y
-git remote add space https://huggingface.co/spaces/waleedarif1011/freight-rate-ml
-git push space HEAD:main
+export HF_TOKEN=hf_...   # https://huggingface.co/settings/tokens (Write + Spaces)
+./scripts/deploy_hf_space.sh
 ```
 
-Or in the Hub UI: **New Space → Gradio →** upload `app.py`, `src/`, `artifacts/`, `scorer_results/`, `requirements.txt`, and this `README.md`.
+The script creates `waleedarif1011/freight-rate-ml` if missing, uploads runtime files, and prints the Space HTTP status. Manual steps: [`docs/hf-space-deploy.md`](docs/hf-space-deploy.md).
 
 ## Layout
 
@@ -89,7 +91,9 @@ Or in the Hub UI: **New Space → Gradio →** upload `app.py`, `src/`, `artifac
 app.py           Gradio “Quote a Truckload Lane” demo
 src/             load → features → train → predict
 artifacts/       model, feature state, metrics, lane list
-scorer_results/  December forecast chart
+assets/          README screenshots (UI presets + December chart)
+scorer_results/  December forecast chart (source)
+scripts/         HF Space deploy helper
 tests/           pytest smoke tests
 docs/            assessment PDF + report PDF
 score.py         provided validator / December chart helper
